@@ -1,0 +1,6 @@
+/target/
+/.settings/
+/.vscode/
+.DS_Store
+/*.jar
+.factorypath
