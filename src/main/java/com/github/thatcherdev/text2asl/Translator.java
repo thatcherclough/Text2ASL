@@ -150,6 +150,7 @@ public class Translator extends JFrame {
         String ret = null;
 
         JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
         panel.setBorder(new EmptyBorder(20, 20, 20, 20));
         panel.setLayout(new GridLayout(0, 1));
