@@ -20,6 +20,7 @@ import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.Noun
 import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.TimeWords;
 import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.ValidPOS;
 import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.VerbTags;
+import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.Contractions;
 
 import net.sf.extjwnl.data.IndexWord;
 import net.sf.extjwnl.data.POS;
@@ -30,6 +31,7 @@ public class ASLConversionService {
 	private boolean isTimeItemFirst = false;
 	private EnglishParserService englishParserService = new EnglishParserService();
 	private TrainedModelParser trainedModelParser = new TrainedModelParser();
+	private Contractions contractions = new Contractions();
 	private VerbTags verbTags = new VerbTags();
 	private NounTags nounTags = new NounTags();
 	private BeWords beWords = new BeWords();
@@ -41,24 +43,26 @@ public class ASLConversionService {
 	 * Converts english sentence {@link sentence} into a grammatically correct ASL
 	 * sentence.
 	 * <p>
-	 * Step 1 - Determines context of sentence (i.e. subject, predicate,
+	 * Step 1 - Replaces contractions in sentence with their original words.
+	 * 
+	 * Step 2 - Determines context of sentence (i.e. subject, predicate,
 	 * active/inactive).
 	 * 
-	 * Step 2 - Brings time items first.
+	 * Step 3 - Brings time items first.
 	 * 
-	 * Step 3 - Brings past tense items first if time items are not already.
+	 * Step 4 - Brings past tense items first if time items are not already.
 	 * 
-	 * Step 4 - Pushes negative items to the end of sentence.
+	 * Step 5 - Pushes negative items to the end of sentence.
 	 * 
-	 * Step 5 - Deletes articles (determiners, prepositions, and subordinating
+	 * Step 6 - Deletes articles (determiners, prepositions, and subordinating
 	 * conjunctions) from the sentence.
 	 * 
-	 * Step 6 - Deletes be words from the sentence.
+	 * Step 7 - Deletes be words from the sentence.
 	 * 
-	 * Step 7 - Gets the 'true' form of verbs and converts any plural nouns to
+	 * Step 8 - Gets the 'true' form of verbs and converts any plural nouns to
 	 * singular.
 	 * 
-	 * Step 8 - Replaces the verb-adverb and adjective-noun order.
+	 * Step 9 - Replaces the verb-adverb and adjective-noun order.
 	 * 
 	 * @param sentence english sentence to convert to an ASL sentence
 	 * @return ASLResponse
@@ -66,6 +70,8 @@ public class ASLConversionService {
 	 */
 	public ASLResponse getASLSentence(String sentence) throws Exception {
 		ASLResponse response = new ASLResponse();
+
+		sentence = replaceContractions(sentence);
 
 		List<WordTagging> tagWords = new ArrayList<>();
 
@@ -96,6 +102,27 @@ public class ASLConversionService {
 		String aslSentence = getASLSentence(tagWords);
 		response.setSentence(aslSentence);
 		return response;
+	}
+
+	/**
+	 * Replaces all contractions in sentence {@link sentence} with their original
+	 * words.
+	 * 
+	 * @param sentence sentence to replace contractions of
+	 * @return {@link sentence} with its contractions replaced
+	 */
+	private String replaceContractions(String sentence) {
+		StringJoiner joiner = new StringJoiner(" ");
+
+		List<String> words = Arrays.asList(sentence.split(" "));
+
+		for (String word : words) {
+			if (contractions.getContractions().containsKey(word))
+				joiner.add(contractions.getContractions().get(word));
+			else
+				joiner.add(word);
+		}
+		return joiner.toString();
 	}
 
 	/**

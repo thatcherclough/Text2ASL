@@ -39,7 +39,7 @@ public class Grabber {
     public static ArrayList<String> getVideoURLsFromSentence(String sentence) throws IOException, InterruptedException {
         ArrayList<String> ret = new ArrayList<String>();
 
-        List<String> words = Arrays.asList(sentence.split("\\W+"));
+        List<String> words = Arrays.asList(sentence.split(" "));
 
         for (int k = 0; k < words.size(); k++) {
             String word = words.get(k);
