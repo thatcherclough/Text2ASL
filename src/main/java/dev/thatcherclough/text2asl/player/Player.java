@@ -1,4 +1,4 @@
-package com.github.thatcherdev.text2asl.player;
+package dev.thatcherclough.text2asl.player;
 
 import java.awt.Image;
 import java.awt.Graphics;

@@ -1,4 +1,4 @@
-package com.github.thatcherdev.text2asl;
+package dev.thatcherclough.text2asl;
 
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.border.EmptyBorder;
 
-import com.github.thatcherdev.text2asl.player.Player;
+import dev.thatcherclough.text2asl.player.Player;
 
 import java.awt.GridLayout;
 import java.awt.BorderLayout;

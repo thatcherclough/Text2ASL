@@ -1,6 +1,5 @@
 /target/
-/.settings/
-/.vscode/
 .DS_Store
 /*.jar
-.factorypath
+/.idea/
+Text2ASL.iml

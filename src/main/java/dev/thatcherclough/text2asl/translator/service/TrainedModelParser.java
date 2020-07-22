@@ -4,7 +4,7 @@
  * Date: February 24, 2020
  * Availability: https://github.com/harshbits/english-asl-algorithm
  */
-package com.github.thatcherdev.text2asl.translator.service;
+package dev.thatcherclough.text2asl.translator.service;
 
 import java.io.StringReader;
 import java.util.Arrays;

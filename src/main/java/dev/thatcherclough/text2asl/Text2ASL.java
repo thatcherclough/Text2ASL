@@ -1,4 +1,4 @@
-package com.github.thatcherdev.text2asl;
+package dev.thatcherclough.text2asl;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,9 +8,9 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.util.ArrayList;
 
-import com.github.thatcherdev.text2asl.grabber.Grabber;
-import com.github.thatcherdev.text2asl.translator.base.ASLResponse;
-import com.github.thatcherdev.text2asl.translator.service.ASLConversionService;
+import dev.thatcherclough.text2asl.grabber.Grabber;
+import dev.thatcherclough.text2asl.translator.base.ASLResponse;
+import dev.thatcherclough.text2asl.translator.service.ASLConversionService;
 import com.google.common.io.Files;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;

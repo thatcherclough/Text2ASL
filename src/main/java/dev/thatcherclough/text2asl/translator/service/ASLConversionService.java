@@ -4,23 +4,23 @@
  * Date: February 24, 2020
  * Availability: https://github.com/harshbits/english-asl-algorithm
  */
-package com.github.thatcherdev.text2asl.translator.service;
+package dev.thatcherclough.text2asl.translator.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringJoiner;
 
-import com.github.thatcherdev.text2asl.translator.base.ASLResponse;
-import com.github.thatcherdev.text2asl.translator.base.EnglishTagResponse;
-import com.github.thatcherdev.text2asl.translator.base.WordTagging;
-import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.BeWords;
-import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.NegationWords;
-import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.NounTags;
-import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.TimeWords;
-import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.ValidPOS;
-import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.VerbTags;
-import com.github.thatcherdev.text2asl.translator.base.GrammarConfiguration.Contractions;
+import dev.thatcherclough.text2asl.translator.base.ASLResponse;
+import dev.thatcherclough.text2asl.translator.base.EnglishTagResponse;
+import dev.thatcherclough.text2asl.translator.base.WordTagging;
+import dev.thatcherclough.text2asl.translator.base.GrammarConfiguration.BeWords;
+import dev.thatcherclough.text2asl.translator.base.GrammarConfiguration.NegationWords;
+import dev.thatcherclough.text2asl.translator.base.GrammarConfiguration.NounTags;
+import dev.thatcherclough.text2asl.translator.base.GrammarConfiguration.TimeWords;
+import dev.thatcherclough.text2asl.translator.base.GrammarConfiguration.ValidPOS;
+import dev.thatcherclough.text2asl.translator.base.GrammarConfiguration.VerbTags;
+import dev.thatcherclough.text2asl.translator.base.GrammarConfiguration.Contractions;
 
 import net.sf.extjwnl.data.IndexWord;
 import net.sf.extjwnl.data.POS;
