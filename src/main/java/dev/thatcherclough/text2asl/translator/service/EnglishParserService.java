@@ -4,14 +4,14 @@
  * Date: February 24, 2020
  * Availability: https://github.com/harshbits/english-asl-algorithm
  */
-package com.github.thatcherdev.text2asl.translator.service;
+package dev.thatcherclough.text2asl.translator.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.thatcherdev.text2asl.translator.base.EnglishTagResponse;
-import com.github.thatcherdev.text2asl.translator.base.EnglishGrammarCheckResponse;
-import com.github.thatcherdev.text2asl.translator.base.WordTagging;
+import dev.thatcherclough.text2asl.translator.base.EnglishTagResponse;
+import dev.thatcherclough.text2asl.translator.base.EnglishGrammarCheckResponse;
+import dev.thatcherclough.text2asl.translator.base.WordTagging;
 
 import edu.stanford.nlp.trees.Tree;
 

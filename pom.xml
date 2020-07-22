@@ -7,8 +7,8 @@
 		<version>2.1.8.RELEASE</version>
 		<relativePath />
 	</parent>
-	<groupId>com.github.thatcherdev</groupId>
-	<artifactId>text2asl</artifactId>
+	<groupId>dev.thatcherclough</groupId>
+	<artifactId>Text2asl</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Text2ASL</name>
 	<description>An english to American Sign Language translator.</description>
@@ -83,7 +83,7 @@
 						<phase>package</phase>
 						<configuration>
 							<finalName>text2asl</finalName>
-							<mainClass>com.github.thatcherdev.text2asl.Text2ASL</mainClass>
+							<mainClass>dev.thatcherclough.text2asl.Text2ASL</mainClass>
 							<outputDirectory>${project.basedir}</outputDirectory>
 						</configuration>
 						<goals>

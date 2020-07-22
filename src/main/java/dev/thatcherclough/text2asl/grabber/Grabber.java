@@ -1,11 +1,11 @@
-package com.github.thatcherdev.text2asl.grabber;
+package dev.thatcherclough.text2asl.grabber;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.github.thatcherdev.text2asl.Text2ASL;
+import dev.thatcherclough.text2asl.Text2ASL;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
